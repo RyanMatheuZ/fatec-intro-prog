@@ -5,17 +5,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplos para Introdução à Programação</title>
+    <title>Introdução à Programação</title>
 </head>
 
 <body>
     <h1>Exercício 05</h1>
     <p>Pedir ao usuário três números, realizar a fórmula de Bhaskara e exibir o resultado das raízes x1 e x2</p>
 
-    
+    <form id="form">
+        <input type="number" placeholder="Informe o valor de A:" id="field1">
+        <input type="number" placeholder="Informe o valor de B:" id="field2">
+        <input type="number" placeholder="Informe o valor de C:" id="field3">
+        <button>Calcular</button>
+    </form>
+
+    <div id="result"></div>
     
     <script>
-        
+        function onSubmit(event) {
+            event.preventDefault()
+
+            let a = parseFloat(field1.value)
+            let b = parseFloat(field2.value)
+            let c = parseFloat(field3.value)
+            
+            if (isNaN(a)) {
+                result.innerHTML = '<p>Informe um valor válido para A</p>'
+                return
+            } else if (isNaN(b)) {
+                result.innerHTML = '<p>Informe um valor válido para B</p>'
+                return
+            } else if (isNaN(c)) {
+                result.innerHTML = '<p>Informe um valor válido para C</p>'
+                return
+            }
+
+            let delta = b * b - 4 * a * c
+            let x1 = (-b + Math.sqrt(delta)) / (2 * a)
+            let x2 = (-b - Math.sqrt(delta)) / (2 * a)
+
+            result.innerHTML = `
+                <ul>
+                    <li>x1 = ${x1}</li>
+                    <li>x2 = ${x2}</li>
+                </ul>
+            `
+        }
+
+        form.addEventListener('submit', onSubmit)
     </script>
 </body>
 
