@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos para Introdução à Programação</title>
+</head>
+
+<body>
+    <h1>Exercício 05</h1>
+    <p>Pedir ao usuário três números, realizar a fórmula de Bhaskara e exibir o resultado das raízes x1 e x2</p>
+
+    <script>
+        let a = parseFloat(prompt('Digite o valor de A:'))
+        let b = parseFloat(prompt('Digite o valor de B:'))
+        let c = parseFloat(prompt('Digite o valor de C:'))
+
+        let delta = b * b - 4 * a * c
+        let x1 = (-b + Math.sqrt(delta)) / (2 * a)
+        let x2 = (-b - Math.sqrt(delta)) / (2 * a)
+
+        document.write(`x1 = <strong>${x1}</strong> <br>`)
+        document.write(`x2 = <strong>${x2}</strong>`)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos para Introdução à Programação</title>
+</head>
+
+<body>
+    <h1>Exercício 04</h1>
+    <p>Pedir ao usuário o preço de um produto e seu desconto, para exibir o preço final</p>
+
+    <script>
+        let price = prompt('Informe o PREÇO de seu produto:')
+        let discount = prompt ('Informe o DESCONTO desse produto:')
+
+        let finalPrice = parseFloat(price) - (parseFloat(price) * parseFloat(discount) / 100)
+
+        document.write(`Seu produto custava R$ ${price}, agora custa <strong>R$ ${finalPrice}</strong>`)
+    </script>
+</body>
+
+</html>

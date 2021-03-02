@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos para Introdução à Programação</title>
+</head>
+
+<body>
+    <h1>Execício 01</h1>
+    <h2>Solicitar algumas informações para o usuário, e exibir de uma vez</h2>
+
+    <script>
+        var name = prompt('Digite seu nome:')
+        var age = prompt('Digite sua idade:')
+        var rg = prompt('Digite seu RG:')
+        var telephone = prompt('Digite seu número de telefone:')
+
+        // Concatenação clássica de Strings.
+        document.write('Olá ' + name + ', você possui ' + age + ' anos de idade! <br>')
+        document.write('Seu RG é: ' + rg + '. E seu número de telefone é: ' + telephone + '.<br>')
+
+        // Usando Template String do ECMAScript 2015.
+        document.write(`Olá <strong>${name}</strong>, vou ligar para você, pelo número: <strong>${telephone}</strong>.`)
+    </script>
+</body>
+
+</html>

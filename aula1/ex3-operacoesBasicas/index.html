@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução à Programação</title>
+</head>
+
+<body>
+    <h1>Exercício 03</h1>
+    <p>Pedir dois números ao usuário e retornar o resultado com as quatro operações aritiméticas básicas</p>
+
+    <script>
+        let n1 = parseFloat(prompt('Digite um número:'))
+        let n2 = parseFloat(prompt('Digite outro número:'))
+
+        let sum = n1 + n2
+        let subtraction = n1 - n2
+        let multiplication = n1 * n2
+        let division = n1 / n2
+
+        document.write(`${n1} + ${n2} = <strong>${sum}</strong> <br>`)
+        document.write(`${n1} - ${n2} = <strong>${subtraction}</strong> <br>`)
+        document.write(`${n1} x ${n2} = <strong>${multiplication}</strong> <br>`)
+        document.write(`${n1} / ${n2} = <strong>${division}</strong>`)
+    </script>
+</body>
+
+</html>
