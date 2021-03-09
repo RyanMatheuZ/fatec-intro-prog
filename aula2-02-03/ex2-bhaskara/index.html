@@ -42,7 +42,7 @@
 
             let delta = b * b - 4 * a * c
 
-            if (isNaN(delta)) {
+            if (delta < 0) {
                 result.innerHTML = '<p>Não foi possível calcular, delta negativo</p>'
                 return
             }
