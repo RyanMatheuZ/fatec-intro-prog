@@ -27,11 +27,8 @@
             let number1 = parseFloat(field1.value)
             let number2 = parseFloat(field2.value)
 
-            if (isNaN(number1)) {
-                result.innerHTML = '<p>Informe um número válido</p>'
-                return
-            } else if (isNaN(number2)) {
-                result.innerHTML = '<p>Informe um número válido</p>'
+            if (isNaN(number1) || isNaN(number2)) {
+                result.innerHTML = '<p>Informe números válidos</p>'
                 return
             }
 
