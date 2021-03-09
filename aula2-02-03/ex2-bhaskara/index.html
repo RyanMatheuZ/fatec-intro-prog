@@ -41,7 +41,19 @@
             }
 
             let delta = b * b - 4 * a * c
+
+            if (isNaN(delta)) {
+                result.innerHTML = '<p>Não foi possível calcular, delta negativo</p>'
+                return
+            }
+
             let x1 = (-b + Math.sqrt(delta)) / (2 * a)
+
+            if (isNaN(x1) || !isFinite(x1)) {
+                result.innerHTML = '<p>Não foi possível calcular as raízes</p>'
+                return
+            }
+
             let x2 = (-b - Math.sqrt(delta)) / (2 * a)
 
             result.innerHTML = `
