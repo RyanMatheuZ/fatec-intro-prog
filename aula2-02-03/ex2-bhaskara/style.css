@@ -28,9 +28,7 @@ p {
     outline-style: none;
 }
 #result {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    text-align: center;
 }
 button {
     color: #FFF;
