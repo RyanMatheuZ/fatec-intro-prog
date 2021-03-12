@@ -1,0 +1,47 @@
+body {
+    background-color: #CBAD87;
+    font-family: Helvetica, sans-serif;
+}
+h1 {
+    color: #2D1813;
+    text-align: center;
+    font-size: 40px;
+}
+p {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+#field1, #field2, #field3 {
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 30px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 5px solid #2D1813;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    display: block;
+    outline-style: none;
+}
+#result {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+button {
+    color: #FFF;
+    background-color: #2D1813;
+    font-weight: bold;
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    display: block;
+    outline-style: none;
+    cursor: pointer;
+}

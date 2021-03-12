@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introdução à Programação</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -36,12 +37,12 @@
                 result.innerHTML = '<p>Por favor, informe um gênero válido.</p>'
                 return
             } else if (gender == 'M' || gender == 'm') {
-                result.style.color = '#1E90FF'
-                result.innerHTML = `<p>BEM-VINDO, ${name}!</p>`
+                result.style.color = '#00005A'
+                result.innerHTML = `<p>Bem-vindo, ${name}!</p>`
                 return
             } else if (gender == 'F' || gender == 'f') {
-                result.style.color = '#FF00FF'
-                result.innerHTML = `<p>BEM-VINDA, ${name}!</p>`
+                result.style.color = '#8E004E'
+                result.innerHTML = `<p>Bem-vinda, ${name}!</p>`
                 return
             }
         }
