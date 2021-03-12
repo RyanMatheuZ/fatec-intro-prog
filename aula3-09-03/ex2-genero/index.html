@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução à Programação</title>
+</head>
+
+<body>
+    <h1>Exercício 02</h1>
+    <p>Solicitar ao usuário seu nome e gênero, exibindo uma mensagem de boas-vindas, personalizada de acordo com o gênero informado</p>
+
+    <form id="form">
+        <input type="text" placeholder="Seu nome" id="field1">
+        <input type="text" placeholder="Seu gênero [ M / F ]" id="field2">
+        <button>Prosseguir</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function onSubmit(event) {
+            event.preventDefault()
+
+            let name = field1.value
+            let gender = field2.value
+            
+            if (name.length == 0 || gender.length == 0) {
+                result.style.color = '#F00'
+                result.innerHTML = '<p>Por favor, preencha os campos para continuar.</p>'
+            } else if (gender != 'M' && gender != 'm' && gender != 'F' && gender != 'f') {
+                result.style.color = '#F00'
+                result.innerHTML = '<p>Por favor, informe um gênero válido.</p>'
+            } else if (gender == 'M' || gender == 'm') {
+                result.style.color = '#1E90FF'
+                result.innerHTML = `<p>BEM-VINDO, ${name}!</p>`
+            } else if (gender == 'F' || gender == 'f') {
+                result.style.color = '#FF00FF'
+                result.innerHTML = `<p>BEM-VINDA, ${name}!</p>`
+            }
+        }
+
+        form.addEventListener('submit', onSubmit)
+    </script>
+</body>
+
+</html>
