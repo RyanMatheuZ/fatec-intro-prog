@@ -30,15 +30,19 @@
             if (name.length == 0 || gender.length == 0) {
                 result.style.color = '#F00'
                 result.innerHTML = '<p>Por favor, preencha os campos para continuar.</p>'
+                return
             } else if (gender != 'M' && gender != 'm' && gender != 'F' && gender != 'f') {
                 result.style.color = '#F00'
                 result.innerHTML = '<p>Por favor, informe um gênero válido.</p>'
+                return
             } else if (gender == 'M' || gender == 'm') {
                 result.style.color = '#1E90FF'
                 result.innerHTML = `<p>BEM-VINDO, ${name}!</p>`
+                return
             } else if (gender == 'F' || gender == 'f') {
                 result.style.color = '#FF00FF'
                 result.innerHTML = `<p>BEM-VINDA, ${name}!</p>`
+                return
             }
         }
 
