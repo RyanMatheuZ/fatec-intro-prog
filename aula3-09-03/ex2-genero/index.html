@@ -28,19 +28,19 @@
             let name = field1.value
             let gender = field2.value
             
-            if (name.length == 0 || gender.length == 0) {
-                result.style.color = '#F00'
-                result.innerHTML = '<p>Por favor, preencha os campos para continuar.</p>'
+            if (name.length === 0 || gender.length === 0) {
+                result.style.color = '#8B0000'
+                result.innerHTML = '<p>Por favor, preencha os campos para prosseguir!</p>'
                 return
-            } else if (gender != 'M' && gender != 'm' && gender != 'F' && gender != 'f') {
-                result.style.color = '#F00'
-                result.innerHTML = '<p>Por favor, informe um gênero válido.</p>'
+            } else if (gender !== 'M' && gender !== 'm' && gender !== 'F' && gender !== 'f') {
+                result.style.color = '#8B0000'
+                result.innerHTML = '<p>Por favor, informe um gênero válido!</p>'
                 return
-            } else if (gender == 'M' || gender == 'm') {
+            } else if (gender === 'M' || gender === 'm') {
                 result.style.color = '#00005A'
                 result.innerHTML = `<p>Bem-vindo, ${name}!</p>`
                 return
-            } else if (gender == 'F' || gender == 'f') {
+            } else if (gender === 'F' || gender === 'f') {
                 result.style.color = '#8E004E'
                 result.innerHTML = `<p>Bem-vinda, ${name}!</p>`
                 return

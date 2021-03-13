@@ -11,14 +11,43 @@
 
 <body>
     <h1>Exercício 01</h1>
-    <p>Montar uma tela para o usuário escolher o clima atual, e retornar uma mensagem correspondente</p>
+    <p>Pedir para o usuário o clima atual, e retornar uma mensagem correspondente</p>
     
-    <form id="form">
-        
-    </form>
+    <div id="content">
+        <label for="weather">Selecione o tipo de clima hoje:</label>
+        <select id="weather">
+            <option value="">-- Faça uma escolha --</option>
+            <option value="sunny">Ensolarado</option>
+            <option value="rainy">Chuvoso</option>
+            <option value="snowing">Nevando</option>
+            <option value="overcast">Nublado</option>
+        </select>
+    </div>
+
+    <div id="result"></div>
 
     <script>
+        function setWeather() {
+            let choice = weather.value
 
+            if (choice === 'sunny') {
+                result.style.color = '#008000'
+                result.innerHTML = '<p>Hoje está bom e ensolarado lá fora. Use shorts! Vá à praia ou ao parque e tome um sorvete!</p>'
+            } else if (choice === 'rainy') {
+                result.style.color = '#191970'
+                result.innerHTML = '<p>A chuva está caindo lá fora; leve uma capa de chuva e um guarda-chuva, e não fique fora por muito tempo!</p>'
+            } else if (choice === 'snowing') {
+                result.style.color = '#696969'
+                result.innerHTML = '<p>A neve está caindo - está congelando! Melhor ficar em casa com uma xícara de chocolate quente ou construir um boneco de neve!</p>'
+            }else if (choice === 'overcast') {
+                result.style.color = '#2F4F4F'
+                result.innerHTML = '<p>Não está chovendo, mas o céu está cinza e sombrio; pode mudar a qualquer minuto, então leve uma capa de chuva !</p>'
+            } else {
+                result.innerHTML = ''
+            }
+        }
+
+        weather.addEventListener('change', setWeather)
     </script>
 </body>
 
