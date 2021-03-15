@@ -15,7 +15,7 @@ p {
 select {
     outline-style: none;
 }
-#content {
+#contents {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
