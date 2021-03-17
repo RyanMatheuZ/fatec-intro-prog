@@ -12,8 +12,8 @@
 <body>
     <h1>Exercício 01</h1>
     <p>Pedir para o usuário o clima atual, e retornar uma mensagem correspondente</p>
-    
-    <div id="contents">
+
+    <form id="form">
         <label for="weather">Selecione o tipo de clima hoje:</label>
         <select id="weather">
             <option value="">-- Faça uma escolha --</option>
@@ -22,15 +22,23 @@
             <option value="snowing">Nevando</option>
             <option value="overcast">Nublado</option>
         </select>
-    </div>
+
+        <button>Ver mensagem</button>
+    </form>
 
     <div id="result"></div>
 
     <script>
-        function setWeather() {
+        function setWeather(event) {
+            event.preventDefault()
+
             let choice = weather.value
 
-            if (choice === 'sunny') {
+            if (choice === '') {
+                result.style.color = '#FF0000'
+                result.innerHTML = '<p>Escolha o clima atual para continuar!</p>'
+                return
+            } else if (choice === 'sunny') {
                 result.style.color = '#008000'
                 result.innerHTML = '<p>Hoje está bom e ensolarado lá fora. Use shorts! Vá à praia ou ao parque e tome um sorvete!</p>'
                 return
@@ -46,13 +54,10 @@
                 result.style.color = '#2F4F4F'
                 result.innerHTML = '<p>Não está chovendo, mas o céu está cinza e sombrio; pode mudar a qualquer minuto, então leve uma capa de chuva!</p>'
                 return
-            } else {
-                result.innerHTML = ''
-                return
             }
         }
 
-        weather.addEventListener('change', setWeather)
+        form.addEventListener('submit', setWeather)
     </script>
 </body>
 
