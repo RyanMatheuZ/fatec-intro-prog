@@ -29,12 +29,12 @@
     <div id="result"></div>
 
     <script>
-        function setWeather(event) {
+        function onSubmit(event) {
             event.preventDefault()
 
             let choice = weather.value
 
-            if (choice === '') {
+            if (!choice) {
                 result.style.color = '#FF0000'
                 result.innerHTML = '<p>Escolha o clima atual para continuar!</p>'
                 return
@@ -57,7 +57,7 @@
             }
         }
 
-        form.addEventListener('submit', setWeather)
+        form.addEventListener('submit', onSubmit)
     </script>
 </body>
 
