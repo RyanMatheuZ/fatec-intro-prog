@@ -12,7 +12,7 @@ p {
     font-size: 18px;
     font-weight: bold;
 }
-#field1, #field2 {
+#field {
     text-align: center;
     position: relative;
     left: 50%;
@@ -39,4 +39,11 @@ button {
     display: block;
     outline-style: none;
     cursor: pointer;
+}
+
+#result .negative {
+    color: #F00;
+}
+#form .negative {
+    border-bottom-color: #F00;
 }

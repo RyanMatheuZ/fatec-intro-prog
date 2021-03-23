@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução à Programação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Exercício 01</h1>
+    <p>Pedir ao usuário dois números e exibir o intervalo entre eles do maior para o menor</p>
+
+    <form id="form" novalidate>
+        <input type="number" placeholder="Informe o valor inicial" id="field1">
+        <input type="number" placeholder="Informe o valor final" id="field2">
+
+        <button>Exibir</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function onSubmit(event) {
+            event.preventDefault()
+            
+            let number1 = parseFloat(field1.value)
+            let number2 = parseFloat(field2.value)
+
+            result.innerHTML = ''
+            field1.className = ''
+            field2.className = ''
+
+            if (isNaN(number1)) {
+                result.innerHTML = '<p class="negative">Informe o número inicial!</p>'
+                field1.className = 'negative'
+            } else if (isNaN(number2)) {
+                result.innerHTML = '<p class="negative">Informe o número final!</p>'
+                field2.className = 'negative'
+            } else if (number1 < number2 || number1 === number2) {
+                result.innerHTML = '<p class="negative">Impossível fazer o intervalo negativo entre esses números!</p>'
+                field1.className = 'negative'
+                field2.className = 'negative'
+            } else {
+                for (let i = number1; i > number2; i--) {
+                    result.innerHTML += `${i}, `
+                }
+                result.innerHTML += `${number2}`
+            }
+        }
+
+        form.addEventListener('submit', onSubmit)
+    </script>
+</body>
+
+</html>

@@ -31,19 +31,15 @@
             if (!name || !gender) {
                 result.style.color = '#8B0000'
                 result.innerHTML = '<p>Por favor, preencha os campos vazios para prosseguir!</p>'
-                return
             } else if (gender !== 'M' && gender !== 'm' && gender !== 'F' && gender !== 'f') {
                 result.style.color = '#8B0000'
                 result.innerHTML = '<p>Por favor, informe um gênero válido!</p>'
-                return
             } else if (gender === 'M' || gender === 'm') {
                 result.style.color = '#00005A'
                 result.innerHTML = `<p>Bem-vindo, ${name}!</p>`
-                return
             } else {
                 result.style.color = '#8E004E'
                 result.innerHTML = `<p>Bem-vinda, ${name}!</p>`
-                return
             }
         }
 

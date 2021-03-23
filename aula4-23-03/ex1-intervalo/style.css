@@ -27,6 +27,9 @@ p {
     display: block;
     outline-style: none;
 }
+#result {
+    padding: 10px 0;
+}
 button {
     color: #FFF;
     background-color: #141620;
@@ -39,4 +42,11 @@ button {
     display: block;
     outline-style: none;
     cursor: pointer;
+}
+
+#result .negative {
+    color: #F00;
+}
+#form .negative {
+    border-bottom-color: #F00;
 }
