@@ -33,12 +33,13 @@
             if (isNaN(number)) {
                 result.innerHTML = '<p class="negative">Informe um número para prosseguir!</p>'
                 field.className = 'negative'
-            } else {
-                let i = 0
-                while (i <= 10) {
-                    result.innerHTML += `<p>${number} x ${i} = ${number * i}</p>`
-                    i++
-                }
+                return
+            }
+
+            let i = 0
+            while (i <= 10) {
+                result.innerHTML += `<p>${number} x ${i} = ${number * i}</p>`
+                i++
             }
         }
 

@@ -30,14 +30,8 @@
             let b = parseFloat(field2.value)
             let c = parseFloat(field3.value)
             
-            if (isNaN(a)) {
-                result.innerHTML = '<p>Informe um valor válido para A</p>'
-                return
-            } else if (isNaN(b)) {
-                result.innerHTML = '<p>Informe um valor válido para B</p>'
-                return
-            } else if (isNaN(c)) {
-                result.innerHTML = '<p>Informe um valor válido para C</p>'
+            if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                result.innerHTML = '<p>Informe um valor válido!</p>'
                 return
             }
 
