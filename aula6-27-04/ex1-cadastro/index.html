@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execício 01</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Introdução aos Objetos Literais</h1>
+
+    <form id="form">
+        <input type="text" placeholder="Nome" id="field1">
+        <input type="text" placeholder="Sobrenome" id="field2">
+        <input type="text" placeholder="Idade" id="field3">
+
+        <button>Adicionar</button>
+    </form>
+
+    <button id="showAll">Exibir</button>
+
+    <div id="result"></div>
+
+    <script>
+        let persons = []
+
+        function onSubmit(event) {
+            event.preventDefault()
+
+            result.innerHTML = ''
+
+            field1.className = ''
+            field2.className = ''
+            field3.className = ''
+
+            let people = {
+                name: field1.value,
+                lastname: field2.value,
+                age: parseInt(field3.value)
+            }
+
+            if (!field1.value || !isNaN(field1.value)) {
+                result.innerHTML = '<p class="negative">Insira um nome válido!</p>'
+                field1.className = 'negative'
+            } else if (!field2.value || !isNaN(field2.value)) {
+                result.innerHTML = '<p class="negative">Insira um sobrenome válido!</p>'
+                field2.className = 'negative'
+            } else if (!field3.value || isNaN(field3.value)) {
+                result.innerHTML = '<p class="negative">Insira uma idade válida!</p>'
+                field3.className = 'negative'
+            } else {
+                field1.value = ''
+                field2.value = ''
+                field3.value = ''
+
+                persons.push(people)
+            }
+        }
+
+        form.addEventListener('submit', onSubmit)
+
+        function toAdd() {
+            result.innerHTML = ''
+
+            if (!persons.length) {
+                result.innerHTML = '<p class="negative">Faça seu cadastro primeiro!</p>'
+                field1.className = 'negative'
+                field2.className = 'negative'
+                field3.className = 'negative'
+                return
+            }
+
+            for (let i of persons) {
+                result.innerHTML += `<p>${i.name} - ${i.age} anos</p>`
+            }
+        }
+
+        showAll.addEventListener('click', toAdd)
+    </script>
+</body>
+
+</html>
