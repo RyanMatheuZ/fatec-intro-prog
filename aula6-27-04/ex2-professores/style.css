@@ -12,7 +12,10 @@ p {
     font-size: 18px;
     font-weight: bold;
 }
-#field1, #field2, #field3, #field4 {
+label {
+    display: none;
+}
+#field1, #field2, select {
     text-align: center;
     position: relative;
     left: 50%;

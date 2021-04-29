@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Criar uma página para cadastar professores</h1>
+
+    <form id="form">
+        <input type="text" placeholder="Nome" id="field1">
+
+        <input type="text" placeholder="Sobrenome" id="field2">
+
+        <label for="field3">Gênero</label>
+        <select id="field3">
+            <option value="">Gênero</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+        </select>
+
+        <label for="field4">Titulação</label>
+        <select id="field4">
+            <option value="">Titulação</option>
+            <option value="tecnologo">Tecnólogo</option>
+            <option value="bacharel">Bacharel</option>
+            <option value="mestre">Mestre</option>
+            <option value="doutor">Doutor</option>
+        </select>
+
+        <button>Adicionar</button>
+    </form>
+
+    <button id="showAll">Exibir</button>
+
+    <div id="result"></div>
+
+    <script>
+        let teachers = []
+
+        function onSubmit(event) {
+            event.preventDefault()
+
+            result.innerHTML = ''
+
+            field1.className = ''
+            field2.className = ''
+            field3.className = ''
+            field4.className = ''
+
+            let people = {
+                name: field1.value,
+                surname: field2.value,
+                gender: field3.value,
+                titration: field4.value
+            }
+
+            if (!field1.value || !isNaN(field1.value)) {
+                result.innerHTML = '<p class="negative">Informe seu nome!</p>'
+                field1.className = 'negative'
+            } else if (!field2.value || !isNaN(field2.value)) {
+                result.innerHTML = '<p class="negative">Informe seu sobrenome!</p>'
+                field2.className = 'negative'
+            } else if (!field3.value) {
+                result.innerHTML = '<p class="negative">Informe seu gênero!</p>'
+                field3.className = 'negative'
+            } else if (!field4.value) {
+                result.innerHTML = '<p class="negative">Informe sua titulação!</p>'
+                field4.className = 'negative'
+            } else {
+                field1.value = ''
+                field2.value = ''
+                field3.value = ''
+                field4.value = ''
+
+                teachers.push(people)
+            }
+        }
+
+        form.addEventListener('submit', onSubmit)
+
+        function toAdd() {
+            result.innerHTML = ''
+
+            if (!teachers.length) {
+                result.innerHTML = '<p class="negative">Faça seu cadastro primeiro!</p>'
+                field1.className = 'negative'
+                field2.className = 'negative'
+                field3.className = 'negative'
+                field4.className = 'negative'
+                return
+            }
+
+            for (let i of teachers) {
+                result.innerHTML += `<p>${i.name} ${i.surname} é ${i.titration}</p>`
+            }
+        }
+
+        showAll.addEventListener('click', toAdd)
+    </script>
+</body>
+
+</html>
