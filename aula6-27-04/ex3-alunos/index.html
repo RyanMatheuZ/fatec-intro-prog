@@ -13,6 +13,25 @@
     <h1>Criar uma página para cadastrar alunos</h1>
 
     <form id="form">
+        <input type="text" placeholder="Nome" id="field1">
+
+        <input type="text" placeholder="Sobrenome" id="field2">
+
+        <label for="field3">Gênero</label>
+        <select id="field3">
+            <option value="">Gênero</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+        </select>
+
+        <label for="field4">Curso</label>
+        <select id="field4">
+            <option value="">Curso</option>
+            <option value="Agronegócio">Agronegócio</option>
+            <option value="Análise e Desenv. de Sistemas">Análise e Desenvolvimento de Sistemas</option>
+            <option value="Produção Industrial">Produção Industrial</option>
+            <option value="Sistemas para Internet">Sistemas para Internet</option>
+        </select>
 
         <button>Adicionar</button>
     </form>
@@ -22,12 +41,67 @@
     <div id="result"></div>
 
     <script>
+        let students = []
+
         function onSubmit(event) {
             event.preventDefault()
 
+            result.innerHTML = ''
+
+            field1.className = ''
+            field2.className = ''
+            field3.className = ''
+            field4.className = ''
+
+            let people = {
+                name: field1.value,
+                surname: field2.value,
+                gender: field3.value,
+                course: field4.value
+            }
+
+            if (!field1.value || !isNaN(field1.value)) {
+                result.innerHTML = '<p class="negative">Informe seu nome!</p>'
+                field1.className = 'negative'
+            } else if (!field2.value || !isNaN(field2.value)) {
+                result.innerHTML = '<p class="negative">Informe seu sobrenome!</p>'
+                field2.className = 'negative'
+            } else if (!field3.value) {
+                result.innerHTML = '<p class="negative">Informe seu gênero!</p>'
+                field3.className = 'negative'
+            } else if (!field4.value) {
+                result.innerHTML = '<p class="negative">Informe seu curso!</p>'
+                field4.className = 'negative'
+            } else {
+                field1.value = ''
+                field2.value = ''
+                field3.value = ''
+                field4.value = ''
+
+                students.push(people)
+            }
         }
 
         form.addEventListener('submit', onSubmit)
+
+        function toAdd() {
+            result.innerHTML = ''
+
+            if (!students.length) {
+                result.innerHTML = '<p class="negative">Faça seu cadastro primeiro!</p>'
+                field1.className = 'negative'
+                field2.className = 'negative'
+                field3.className = 'negative'
+                field4.className = 'negative'
+                return
+            }
+
+            for (let i of students) {
+                result.innerHTML += `<p>${i.name} ${i.surname} cursa ${i.course}</p>`
+            }
+        }
+
+        showAll.addEventListener('click', toAdd)
     </script>
 </body>
 
