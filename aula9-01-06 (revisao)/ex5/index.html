@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 05</title>
+    <link rel="stylesheet" href="./Pikaday-master/css/pikaday.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>
+        Exercício 05
+    </h1>
+    <p>
+        Escolha uma data para exibí-la formatadamente.
+    </p>
+
+    <form id="form">
+        <input type="text" placeholder="Escolha uma data" id="datepicker" autocomplete="off">
+
+        <button>Conferir</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script src="./Pikaday-master/pikaday.js"></script>
+    <script src="./script.js"></script>
+    <script>
+        const picker = new Pikaday({ field: document.getElementById('datepicker') });
+    </script>
+</body>
+
+</html>
